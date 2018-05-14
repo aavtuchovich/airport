@@ -1,17 +1,36 @@
-//---------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #include <vcl.h>
 #pragma hdrstop
 
 #include "Unit3.h"
 #include "Unit1.h"
-//---------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
 TForm3 *Form3;
-//---------------------------------------------------------------------------
-__fastcall TForm3::TForm3(TComponent* Owner)
-	: TForm(Owner)
+
+// ---------------------------------------------------------------------------
+__fastcall TForm3::TForm3(TComponent* Owner) : TForm(Owner) {
+}
+// ---------------------------------------------------------------------------
+
+void __fastcall TForm3::Button1Click(TObject *Sender) {
+	Form1->ADOTable2->Filtered = false;
+	Form1->ADOTable2->Filter = "Flight_numb like '%" + Edit1->Text + "%'";
+	Form1->ADOTable2->Filtered = true;
+}
+// ---------------------------------------------------------------------------
+void __fastcall TForm3::Button2Click(TObject *Sender)
 {
+	Form1->ADOTable2->Filtered = false;
+	DBGrid1->Refresh();
 }
 //---------------------------------------------------------------------------
+
+void __fastcall TForm3::FormClose(TObject *Sender, TCloseAction &Action)
+{
+Form1->Flights->Down = false;
+}
+//---------------------------------------------------------------------------
+

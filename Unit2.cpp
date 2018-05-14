@@ -19,4 +19,17 @@ void __fastcall TForm2::Button2Click(TObject *Sender) {
 	Form1->ADOTable1->Filtered = false;
 	DBGrid1->Refresh();
 }
+
 // ---------------------------------------------------------------------------
+void __fastcall TForm2::Button1Click(TObject *Sender) {
+	Form1->ADOTable1->Filtered = false;
+	Form1->ADOTable1->Filter = "Plane_type like '%" + Edit1->Text + "%'";
+	Form1->ADOTable1->Filtered = true;
+}
+// ---------------------------------------------------------------------------
+void __fastcall TForm2::FormClose(TObject *Sender, TCloseAction &Action)
+{
+Form1->Planes->Down = false;
+}
+//---------------------------------------------------------------------------
+

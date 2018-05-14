@@ -1,0 +1,134 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  BorderStyle = bsSingle
+  Caption = 'Airport'
+  ClientHeight = 408
+  ClientWidth = 721
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  FormStyle = fsMDIForm
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object StatusBar: TStatusBar
+    Left = 0
+    Top = 389
+    Width = 721
+    Height = 19
+    AutoHint = True
+    Panels = <>
+    SimplePanel = True
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 721
+    Height = 41
+    Align = alTop
+    TabOrder = 0
+    object Planes: TSpeedButton
+      Left = 8
+      Top = 13
+      Width = 103
+      Height = 22
+      AllowAllUp = True
+      GroupIndex = 1
+      Caption = #1057#1072#1084#1086#1083#1077#1090#1099
+      OnClick = PlanesClick
+    end
+    object Flights: TSpeedButton
+      Left = 117
+      Top = 13
+      Width = 100
+      Height = 22
+      AllowAllUp = True
+      GroupIndex = 2
+      Caption = #1055#1086#1083#1077#1090#1099
+      OnClick = FlightsClick
+    end
+    object Graphic: TSpeedButton
+      Left = 223
+      Top = 13
+      Width = 121
+      Height = 22
+      AllowAllUp = True
+      GroupIndex = 3
+      Caption = #1056#1072#1089#1087#1080#1089#1072#1085#1080#1077' '#1087#1086#1083#1077#1090#1086#1074
+      OnClick = GraphicClick
+    end
+  end
+  object ADOConnection1: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\github\airport\A' +
+      'irport.mdb;Persist Security Info=False'
+    LoginPrompt = False
+    Mode = cmShareDenyNone
+    Provider = 'Microsoft.Jet.OLEDB.4.0'
+    Left = 92
+    Top = 64
+  end
+  object MainMenu1: TMainMenu
+    Left = 172
+    Top = 72
+    object MenuItem1: TMenuItem
+      Caption = '&'#1052#1077#1085#1102
+      object Exit: TMenuItem
+        Caption = '&'#1042#1099#1093#1086#1076
+        OnClick = ExitClick
+      end
+      object Plane_S: TMenuItem
+        Caption = '&SQL >'
+        object MenuItem2: TMenuItem
+          Caption = #1050#1086#1083#1080#1095#1077#1089#1090#1074#1086' '#1089#1074#1086#1073#1086#1076#1085#1099#1093' '#1084#1077#1089#1090' '#1074' '#1089#1072#1084#1086#1083#1077#1090#1072#1093
+        end
+        object MenuItem3: TMenuItem
+          Caption = #1053#1086#1084#1077#1088#1072' '#1072#1074#1080#1072#1088#1077#1081#1089#1086#1074' '#1089' '#1084#1080#1085#1080#1084#1072#1083#1100#1085#1086#1081' '#1089#1090#1086#1080#1084#1086#1089#1090#1100#1102' '#1073#1077#1083#1077#1090#1086#1074
+        end
+        object N4: TMenuItem
+          Caption = #1053#1072#1087#1088#1072#1074#1083#1077#1085#1080#1103' '#1075#1076#1077' '#1072#1074#1080#1072#1088#1077#1081#1089#1086#1074' '#1073#1086#1083#1100#1096#1077' '#1076#1074#1091#1093
+        end
+        object SQL1: TMenuItem
+          Caption = #1042#1074#1077#1076#1080#1090#1077' '#1089#1074#1086#1081' SQL '#1047#1072#1087#1088#1086#1089
+        end
+      end
+    end
+    object About1: TMenuItem
+      Caption = '&'#1054#1073' '#1040#1074#1090#1086#1088#1077
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = ADOTable1
+    Left = 20
+    Top = 64
+  end
+  object ADOTable1: TADOTable
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    TableName = 'Planes'
+    Left = 276
+    Top = 56
+  end
+  object ADOTable2: TADOTable
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    TableName = 'Flights'
+    Left = 352
+    Top = 64
+  end
+  object ADOTable3: TADOTable
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    TableName = 'Graphic'
+    Left = 392
+    Top = 48
+  end
+end

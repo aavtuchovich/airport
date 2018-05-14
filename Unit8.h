@@ -1,0 +1,28 @@
+//---------------------------------------------------------------------------
+
+#ifndef Unit8H
+#define Unit8H
+//---------------------------------------------------------------------------
+#include <Classes.hpp>
+#include <Controls.hpp>
+#include <StdCtrls.hpp>
+#include <Forms.hpp>
+#include <ADODB.hpp>
+#include <DB.hpp>
+#include <DBGrids.hpp>
+#include <Grids.hpp>
+//---------------------------------------------------------------------------
+class TForm8 : public TForm
+{
+__published:	// IDE-managed Components
+	TDBGrid *DBGrid1;
+	TDataSource *DataSource1;
+	TADOQuery *ADOQuery1;
+private:	// User declarations
+public:		// User declarations
+	__fastcall TForm8(TComponent* Owner);
+};
+//---------------------------------------------------------------------------
+extern PACKAGE TForm8 *Form8;
+//---------------------------------------------------------------------------
+#endif

@@ -1,7 +1,7 @@
 object Form2: TForm2
   Left = 0
   Top = 0
-  Caption = 'Form2'
+  Caption = #1057#1072#1084#1086#1083#1077#1090#1099
   ClientHeight = 349
   ClientWidth = 635
   Color = clBtnFace
@@ -11,6 +11,7 @@ object Form2: TForm2
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 13
   object PlanesPanel: TPanel
@@ -21,10 +22,6 @@ object Form2: TForm2
     Align = alTop
     Locked = True
     TabOrder = 0
-    Visible = False
-    ExplicitLeft = -86
-    ExplicitTop = -52
-    ExplicitWidth = 721
     object Panel3: TPanel
       Left = 1
       Top = 1
@@ -32,12 +29,12 @@ object Form2: TForm2
       Height = 32
       Align = alTop
       TabOrder = 0
-      ExplicitWidth = 719
       object DBNavigator1: TDBNavigator
         Left = 7
         Top = 3
         Width = 240
         Height = 25
+        DataSource = Form1.DataSource1
         TabOrder = 0
       end
       object Edit1: TEdit
@@ -55,6 +52,7 @@ object Form2: TForm2
       Height = 25
       Caption = #1048#1089#1082#1072#1090#1100'!'
       TabOrder = 1
+      OnClick = Button1Click
     end
     object GroupBox1: TGroupBox
       Left = 1
@@ -64,7 +62,6 @@ object Form2: TForm2
       Align = alBottom
       Caption = #1056#1077#1076#1072#1082#1090#1080#1088#1086#1074#1072#1085#1080#1077' '#1041#1044':'
       TabOrder = 2
-      ExplicitWidth = 719
       object Label1: TLabel
         Left = 7
         Top = 31
@@ -93,6 +90,7 @@ object Form2: TForm2
       Width = 633
       Height = 213
       Align = alClient
+      DataSource = Form1.DataSource1
       ReadOnly = True
       TabOrder = 3
       TitleFont.Charset = DEFAULT_CHARSET
@@ -129,6 +127,7 @@ object Form2: TForm2
       Width = 121
       Height = 21
       DataField = 'Plane_quantaty'
+      DataSource = Form1.DataSource1
       TabOrder = 4
     end
     object Button2: TButton
@@ -146,6 +145,7 @@ object Form2: TForm2
       Width = 121
       Height = 21
       DataField = 'Plane_type'
+      DataSource = Form1.DataSource1
       TabOrder = 6
     end
     object DBEdit2: TDBEdit
@@ -154,6 +154,7 @@ object Form2: TForm2
       Width = 121
       Height = 21
       DataField = 'Sits_quantaty'
+      DataSource = Form1.DataSource1
       TabOrder = 7
     end
   end

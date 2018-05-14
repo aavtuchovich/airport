@@ -30,6 +30,9 @@ __published:	// IDE-managed Components
 	TButton *Button2;
 	TDBEdit *DBEdit1;
 	TDBEdit *DBEdit2;
+	void __fastcall Button1Click(TObject *Sender);
+	void __fastcall Button2Click(TObject *Sender);
+	void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm3(TComponent* Owner);

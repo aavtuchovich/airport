@@ -11,6 +11,7 @@ object Form3: TForm3
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 13
   object FlightsPanel: TPanel
@@ -21,7 +22,6 @@ object Form3: TForm3
     Align = alTop
     Locked = True
     TabOrder = 0
-    ExplicitTop = -52
     object Panel3: TPanel
       Left = 1
       Top = 1
@@ -34,6 +34,7 @@ object Form3: TForm3
         Top = 3
         Width = 240
         Height = 25
+        DataSource = Form1.DataSource2
         TabOrder = 0
       end
       object Edit1: TEdit
@@ -51,6 +52,7 @@ object Form3: TForm3
       Height = 25
       Caption = #1048#1089#1082#1072#1090#1100'!'
       TabOrder = 1
+      OnClick = Button1Click
     end
     object GroupBox1: TGroupBox
       Left = 1
@@ -63,23 +65,23 @@ object Form3: TForm3
       object Label1: TLabel
         Left = 7
         Top = 31
-        Width = 72
+        Width = 49
         Height = 13
-        Caption = #1058#1080#1087' '#1089#1072#1084#1086#1083#1077#1090#1072':'
+        Caption = #8470' '#1088#1077#1081#1089#1072':'
       end
       object Label2: TLabel
         Left = 138
         Top = 31
-        Width = 109
+        Width = 69
         Height = 13
-        Caption = #1050#1086#1083#1080#1095#1077#1089#1090#1074#1086' '#1089#1080#1076#1077#1085#1080#1081':'
+        Caption = #1062#1077#1085#1072' '#1073#1080#1083#1077#1090#1072':'
       end
       object Label3: TLabel
         Left = 265
         Top = 31
-        Width = 120
+        Width = 67
         Height = 13
-        Caption = #1050#1086#1083#1080#1095#1077#1089#1090#1074#1086' '#1089#1072#1084#1086#1083#1077#1090#1086#1074':'
+        Caption = #1052#1077#1089#1090' '#1079#1072#1085#1103#1090#1086':'
       end
     end
     object DBGrid1: TDBGrid
@@ -88,6 +90,7 @@ object Form3: TForm3
       Width = 633
       Height = 213
       Align = alClient
+      DataSource = Form1.DataSource2
       ReadOnly = True
       TabOrder = 3
       TitleFont.Charset = DEFAULT_CHARSET
@@ -98,23 +101,26 @@ object Form3: TForm3
       Columns = <
         item
           Expanded = False
-          FieldName = 'Plane_type'
-          Title.Caption = #1058#1080#1087' '#1089#1072#1084#1086#1083#1077#1090#1072
-          Width = 140
+          FieldName = 'ID_PLANE'
+          Title.Caption = #1053#1086#1084#1077#1088' '#1088#1077#1081#1089#1072
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'Sits_quantaty'
-          Title.Caption = #1050#1086#1083#1080#1095#1077#1089#1090#1074#1086' '#1089#1080#1076#1077#1085#1080#1081
-          Width = 140
+          FieldName = 'PRICE'
+          Title.Caption = #1062#1077#1085#1072
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'Plane_quantaty'
-          Title.Caption = #1050#1086#1083#1080#1095#1077#1089#1090#1074#1086' '#1089#1072#1084#1086#1083#1077#1090#1086#1074
-          Width = 140
+          FieldName = 'Flight_numb'
+          Title.Caption = #1057#1072#1084#1086#1083#1077#1090
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'Sit_number'
+          Title.Caption = #1052#1077#1089#1090' '#1079#1072#1085#1103#1090#1086
           Visible = True
         end>
     end
@@ -123,7 +129,8 @@ object Form3: TForm3
       Top = 290
       Width = 121
       Height = 21
-      DataField = 'Plane_quantaty'
+      DataField = 'Sit_number'
+      DataSource = Form1.DataSource2
       TabOrder = 4
     end
     object Button2: TButton
@@ -133,13 +140,15 @@ object Form3: TForm3
       Height = 25
       Caption = #1057#1073#1088#1086#1089
       TabOrder = 5
+      OnClick = Button2Click
     end
     object DBEdit1: TDBEdit
       Left = 8
       Top = 290
       Width = 121
       Height = 21
-      DataField = 'Plane_type'
+      DataField = 'ID_PLANE'
+      DataSource = Form1.DataSource2
       TabOrder = 6
     end
     object DBEdit2: TDBEdit
@@ -147,7 +156,8 @@ object Form3: TForm3
       Top = 290
       Width = 121
       Height = 21
-      DataField = 'Sits_quantaty'
+      DataField = 'PRICE'
+      DataSource = Form1.DataSource2
       TabOrder = 7
     end
   end
