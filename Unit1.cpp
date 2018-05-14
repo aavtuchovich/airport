@@ -4,7 +4,10 @@
 #pragma hdrstop
 
 #include "Unit1.h"
-#include "child.h"
+#include "Unit2.h"
+#include "Unit3.h"
+#include "Unit4.h"
+#include "Unit5.h"
 // ---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -20,31 +23,17 @@ void __fastcall TForm1::ExitClick(TObject *Sender) {
 }
 
 void __fastcall TForm1::PlanesClick(TObject *Sender) {
-	Planes->Down = true;
-	PlanesPanel->Visible = true;
+	Form2->Show();
 }
 
 // ---------------------------------------------------------------------------
-void __fastcall TForm1::Button1Click(TObject *Sender) {
-	ADOTable1->Filtered = false;
-	ADOTable1->Filter = "Plane_type like '%" + Edit1->Text + "%'";
-	ADOTable1->Filtered = true;
+
+void __fastcall TForm1::FlightsClick(TObject *Sender) {
+	Form3->Show();
+}
+
+// ---------------------------------------------------------------------------
+void __fastcall TForm1::GraphicClick(TObject *Sender) {
+	Form4->Show();
 }
 // ---------------------------------------------------------------------------
-
-void __fastcall TForm1::Button2Click(TObject *Sender) {
-	ADOTable1->Filtered = false;
-	DBGrid1->Refresh();
-}
-// ---------------------------------------------------------------------------
-void __fastcall TForm1::FlightsClick(TObject *Sender)
-{
-if(Planes->Down){
-	PlanesPanel->Visible = false;
-	Planes->Down = false;
-}
-Flights->Down = true;
-FiightsPanel->visible = true;
-}
-//---------------------------------------------------------------------------
-
